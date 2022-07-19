@@ -5,7 +5,10 @@ import Max from './Pages/Max';
 function App() {
   return (
     <div className="App">
+
       <Max/>
+      
+
     </div>
   );
 }
