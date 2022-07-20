@@ -1,9 +1,14 @@
 import React from 'react'
 import Navbar from '../common/Navbar'
+import AllRoutes from './AllRoutes'
 
 const Max = () => {
   return (
-    <Navbar/>
+    <div>
+     <Navbar/>
+    <AllRoutes/>
+    </div>
+    
   )
 }
 
