@@ -1,10 +1,12 @@
 import React from "react";
 import { Box, Stack, Flex, Spacer, Image, Input } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
+import {NavLink} from "react-router-dom"
 
 // import { AiFillAndroid } from "react-icons/ai";
 import { TbTruckDelivery } from "react-icons/tb";
 import { BiStore } from "react-icons/bi";
+import { FaCartPlus } from "react-icons/fa";
 import Hover from "../components/navbarComp/Hover";
 
 // function Example() {
@@ -32,7 +34,7 @@ const Navbar = () => {
             alignItems={"center"}
             marginTop="8px"
           >
-            <TbTruckDelivery justifyItems={"center"} gap="5px" />
+            <TbTruckDelivery justify={"center"} gap="5px" />
 
             <Link>Free Shiping</Link>
           </Flex>
@@ -40,7 +42,7 @@ const Navbar = () => {
           <Flex
             justify={"center"}
             gap="5px"
-            alignItems={"center"}
+            // align={"center"}
             marginTop="10px"
           >
             <BiStore />
@@ -92,22 +94,23 @@ const Navbar = () => {
           </Box>
 
           <Flex gap="30px">
-            <Link><Hover title={"Women"}/></Link>
-            <Link><Hover title={"Men"}/></Link>
+            <NavLink to="/"><Hover title={"Women"}/></NavLink>
+            <NavLink to={'/men'}><Hover title={"Men"}/></NavLink>
             <Link><Hover title={"Girl"}/></Link>
             <Link><Hover title={"Boy"}/></Link>
           </Flex>
 
-
-        <Flex justify={"space-evenly"} height={"50px"} gap="50px">
-          <Box ml={"50px"}>
+        <Flex justify={"space-end"} height={"50px"} gap="50px" width={'50%'} ml={'14%'}  >
+          <Box w={'50%'}>
             <Input placeholder="What are you looking for?" size="md" />
           </Box>
+          <Spacer/>
           
-          <Stack direction={"row"} spacing="20px">
+          <Stack direction={"row"} spacing="20px" mt={'10px'} >
           <Link>More</Link>
           <Link>Signup/Signin</Link>
           {/* <Hover/> */}
+          <FaCartPlus/>
           </Stack>
           
           </Flex>

@@ -9,9 +9,11 @@ const Hover = ({title}) => {
   <button className={style.dropbtn}>{title}</button>
   <div className={style.dropdownContent}>
     <div >
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <p>Link 1</p>
+    <p>Link 1</p>
+    <p>Link 1</p>
+    <p>Link 1</p>
+    
     </div>
     
   </div>
