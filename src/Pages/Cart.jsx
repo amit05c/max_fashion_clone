@@ -8,10 +8,11 @@ const Cart = () => {
     const [ans,setAns] = useState(0)
     
 
-    const handleQuantity= (q,p)=>{
-        let ans= eval(q*p)
+    const handleQuantity= (q,i)=>{
+        // let ans= eval(q*p)
+        console.log(i)
      setQuant(q)
-     setAns(ans)
+    //  setAns(ans)
     }
   return (
     <Flex direction={'column'}>
@@ -21,14 +22,14 @@ const Cart = () => {
     <Box><Text>{el.price}</Text></Box>
     
        {el.size ?  <Button>{`Selected size: ${el.size}`}</Button> : ""} 
-       <Select name="quantity" onChange={(e)=>handleQuantity(+e.target.value,el.price)}>
+       <Select name="quantity" onClick={(e)=>handleQuantity(+e.target.value,el.id)}>
         <option >select quantity</option>
         <option value={'2'}>1</option>
         <option value={'2'}>2</option>
         <option value={'3'}>3</option>
         <option value={'4'}>4</option>
        </Select>
-       <Text>{`Price: ${el.price} x ${quant}=${ans}`}</Text>
+       <Text>{`Price: ${el.price} x ${quant}=${eval(el.price*quant)}`}</Text>
   </Box>
    ))}
    
