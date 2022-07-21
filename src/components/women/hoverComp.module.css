@@ -1,0 +1,10 @@
+.hide {
+    display: none;
+    /* position: relative; */
+  }
+      
+  .myDIV:hover + .hide {
+     /* display: block; */
+    display: inline-block;
+    color: red;
+  }
