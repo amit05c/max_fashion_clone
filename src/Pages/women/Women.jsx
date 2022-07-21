@@ -14,7 +14,7 @@ const Women = () => {
       <Box mt={'30px'}>
       <Link><Image src="/womenImg/flatOffer.png" w={'100%'} m='auto'/></Link>  
       </Box>
-        <StyledSpotLight/>
+        <StyledSpotLight />
     </Box>
   );
 };

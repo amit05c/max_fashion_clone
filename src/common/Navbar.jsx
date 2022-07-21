@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Stack, Flex, Spacer, Image, Input } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
 import {NavLink} from "react-router-dom"
@@ -8,12 +8,14 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { BiStore } from "react-icons/bi";
 import { FaCartPlus } from "react-icons/fa";
 import Hover from "../components/navbarComp/Hover";
+import { CartContext } from "../context/CartContext";
 
 // function Example() {
 //     return <Icon as={TbTruckDelivery} />
 //   }
 
 const Navbar = () => {
+  const {state} = useContext(CartContext)
   return (
     <Box>
       <Box
@@ -110,7 +112,7 @@ const Navbar = () => {
           <Link>More</Link>
           <Link>Signup/Signin</Link>
           {/* <Hover/> */}
-          <FaCartPlus/>
+         <NavLink to={'/cart'}><Box><FaCartPlus/>{state.length>1 ? state.length-1 : ""}</Box></NavLink> 
           </Stack>
           
           </Flex>
