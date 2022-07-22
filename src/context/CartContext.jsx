@@ -12,7 +12,7 @@ const cartReducer= (state,action)=>{
             imgUrl:action.imgUrl,
             size: action.size,
             price: action.price,
-            color: action.color
+            color: action.color,
         }]
     }
     
