@@ -3,8 +3,10 @@ import { Box, Flex, Image, Link,Text,Grid,Button,Select } from "@chakra-ui/react
 import HoverComp from '../../../components/women/HoverComp';
 import { CartContext } from '../../../context/CartContext';
 import { ToastStatusExample } from '../../../components/CartUpdate';
+import { AuthContext } from '../../../context/AuthContext';
 // import Hover from '../../../components/navbarComp/Hover';
 // import { useToast, Wrap, WrapItem } from '@chakra-ui/react'
+import {useNavigate} from "react-router-dom"
 
 
 const topsWear=[
@@ -49,10 +51,12 @@ const TopsWear = () => {
   // const statuses = ['success']
 
   const {state,dispatch}= useContext(CartContext)
+  const {state1} = useContext(AuthContext)
   const [update,setUpdate] = useState(false)
   
   const [data,setData]=useState(topsWear)
   const [size,setSize]= useState()
+  const navigate= useNavigate()
 
   const handleLow=()=>{
     // console.log("amit")
@@ -79,12 +83,19 @@ const TopsWear = () => {
     
     // console.log(id)
     // console.log(size)
-    topsWear.filter(el=>{
-      if(el.id==id){
-        dispatch({type:'add', id: id,imgUrl:el.image,size:size, price:el.price})
-      }
-    })
-    alert("Added to the cart")
+    if(state1.status){
+      topsWear.filter(el=>{
+        if(el.id==id){
+          dispatch({type:'add', id: id,imgUrl:el.image,size:size, price:el.price})
+        }
+      })
+      alert("Added to the cart")
+    }else{
+     navigate('/login')
+     
+    }
+    
+    
   }
 
 

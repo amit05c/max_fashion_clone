@@ -15,6 +15,19 @@ const cartReducer= (state,action)=>{
             color: action.color
         }]
     }
+    
+    case "delete":{
+        return [
+            ...state,
+            {
+            id:action.id,
+            imgUrl:action.imgUrl,
+            size: action.size,
+            price: action.price,
+            color: action.color
+        }]
+    }
+
     default:{
        return state
     }
