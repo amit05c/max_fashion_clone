@@ -2,7 +2,9 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Box, Flex, Image, Link,Text,Grid,Button,Select } from "@chakra-ui/react";
 import HoverComp from '../../../components/women/HoverComp';
 import { CartContext } from '../../../context/CartContext';
+import { ToastStatusExample } from '../../../components/CartUpdate';
 // import Hover from '../../../components/navbarComp/Hover';
+// import { useToast, Wrap, WrapItem } from '@chakra-ui/react'
 
 
 const topsWear=[
@@ -43,6 +45,9 @@ const topsWear=[
 
 
 const TopsWear = () => {
+  // const toast = useToast()
+  // const statuses = ['success']
+
   const {state,dispatch}= useContext(CartContext)
   const [update,setUpdate] = useState(false)
   
@@ -79,6 +84,7 @@ const TopsWear = () => {
         dispatch({type:'add', id: id,imgUrl:el.image,size:size, price:el.price})
       }
     })
+    alert("Added to the cart")
   }
 
 
@@ -111,6 +117,13 @@ useEffect(()=>{
           ))}
          </Select>
          <Button bg='tomato'  onClick={()=>handleSubmit(el.id)}>Add to cart</Button>
+         
+
+
+        
+
+
+         
     </Box>
         
     ))}

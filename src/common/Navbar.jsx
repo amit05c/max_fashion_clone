@@ -110,7 +110,7 @@ const Navbar = () => {
           
           <Stack direction={"row"} spacing="20px" mt={'10px'} >
           <Link>More</Link>
-          <Link>Signup/Signin</Link>
+          <NavLink to={'/login'}>Signup/Signin</NavLink>
           {/* <Hover/> */}
          <NavLink to={'/cart'}><Box><FaCartPlus/>{state.length>1 ? state.length-1 : ""}</Box></NavLink> 
           </Stack>

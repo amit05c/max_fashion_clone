@@ -8,11 +8,41 @@ const Hover = ({title}) => {
 <div className={style.dropdown}>
   <button className={style.dropbtn}>{title}</button>
   <div className={style.dropdownContent}>
-    <div >
-    <p>Link 1</p>
-    <p>Link 1</p>
-    <p>Link 1</p>
-    <p>Link 1</p>
+    <div style={{display:"flex", justifyContent:"space-evenly", alignItems:"center"}}>
+    <div>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+    </div>
+
+    <div>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+    </div>
+    
+    <div>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+    </div>
+    <div>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+      <p>Jeans</p>
+    </div>
     
     </div>
     
