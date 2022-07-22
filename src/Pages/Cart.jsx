@@ -15,25 +15,26 @@ const Cart = () => {
     //  setAns(ans)
     }
   return (
-    <Flex direction={'column'}>
+    <Flex direction={'column'} gap="1rem">
    {state.map(el=>(
     <Box key={el.id} border={"1px solid black"} w={'40%'} m={"auto"}>
   <Center><Image src={el.imgUrl}  /></Center>  
     <Box><Text>{el.price}</Text></Box>
     
        {el.size ?  <Button>{`Selected size: ${el.size}`}</Button> : ""} 
-       <Select name="quantity" onClick={(e)=>handleQuantity(+e.target.value,el.id)}>
+      {el.size ? <Select name="quantity" onClick={(e)=>handleQuantity(+e.target.value,el.id)}> 
         <option >select quantity</option>
         <option value={'2'}>1</option>
         <option value={'2'}>2</option>
         <option value={'3'}>3</option>
         <option value={'4'}>4</option>
-       </Select>
-       <Text>{`Price: ${el.price} x ${quant}=${eval(el.price*quant)}`}</Text>
+       </Select> : ""} 
+     {el.text? <Text>{`Price: ${el.price} x ${quant}=${eval(el.price*quant)}`}</Text> : ""}  
+     {!el.text? <Button>Remove item</Button> : ""} 
   </Box>
    ))}
    
-  
+  <Box><Text>Total price</Text></Box>
     </Flex>
   )
 }
