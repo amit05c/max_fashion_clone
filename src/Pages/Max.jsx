@@ -7,8 +7,11 @@ const Max = () => {
   return (
     <div>
      <Navbar/>
-    <AllRoutes/>
-    <FooterPart/>
+     <div style={{marginBottom:"3rem"}} >
+    <AllRoutes />
+
+     </div>
+    <FooterPart />
     </div>
     
   )

@@ -94,7 +94,7 @@ const FooterPart = () => {
                 Start A Return Or Exchange (US)
               </div>
               <div className={styles.help} style={{ width: "120px" }}>
-                Returns & Exchanges
+                {`Returns & Exchanges`}
               </div>
               <div className={styles.help} style={{ width: "120px" }}>
                 Shipping
@@ -123,7 +123,7 @@ const FooterPart = () => {
                 A Greater Good
               </div>
               <div className={styles.help} style={{ width: "120px" }}>
-                Diversity & Inclusion
+                {`Diversity & Inclusion`}
               </div>
               <div className={styles.help} style={{ width: "120px" }}>
                 Stories
@@ -143,10 +143,10 @@ const FooterPart = () => {
                 AnthroLiving B2B
               </div>
               <div className={styles.help} style={{ width: "120px" }}>
-                Furniture: Guides & Services
+               {` Furniture: Guides & Services`}
               </div>
               <div className={styles.help} style={{ width: "120px" }}>
-                Store Pickup & Collection Points
+                {`Store Pickup & Collection Points`}
               </div>
               <div className={styles.help} style={{ width: "120px" }}>
                 Klarna

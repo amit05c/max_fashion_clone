@@ -55,7 +55,7 @@ useEffect(()=>{
         <Button  mr={'1rem'} onClick={handleLow}>Low to high</Button>
         <Button onClick={handleHigh}>High to low</Button>
       </Box>
-    <Grid templateColumns={`repeat(4,1fr)`}gap="2px">
+    <Grid templateColumns={{base:`repeat(1,1fr)`,sm:`repeat(2,1fr)`, md: `repeat(3,1fr)`, lg: `repeat(4,1fr)`}}gap="2px">
     {data.map(el=>(
       <Box key={el.id}>
      <Link>
