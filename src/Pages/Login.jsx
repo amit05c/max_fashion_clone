@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import {
   FormControl,
   FormLabel,
@@ -8,13 +8,17 @@ import {
   Text,
   Flex,
   Box,
+  Stack,
 } from '@chakra-ui/react'
+import { AuthContext } from '../context/AuthContext'
 
 const Login = () => {
 const [info,setInfo] = useState({})
 const [data,setData] = useState([])
 const [ login,setLogin] = useState({})
 
+const {state1,dispatch1} = useContext(AuthContext)
+   console.log(state1)
 const handleInfo= (e)=>{
      const {name,value} = e.target
      setInfo({
@@ -48,6 +52,10 @@ const handleInfo= (e)=>{
     for(let i=0; i<userInfo.length; i++){
       if(userInfo[i].email== login.email && userInfo[i].password==login.password){
         console.log("Login success")
+        console.log(userInfo[i].name)
+        dispatch1({type:"login", status:true, name: userInfo[i].name })
+        // state1.status ? return {<Navigate to="/mens"/>} : {<Navigate to={'/login'}/>    }
+        console.log(state1.status)
       }else{
         console.log("Login failed")
       }
@@ -55,17 +63,29 @@ const handleInfo= (e)=>{
   }
 
   return (
-    <Flex justify={'space-around'}>
-      <Box>
+    <Flex justify={'space-around'} width={'100%'} h={'20rem'} mt={'4rem'}>
+      <Box bg={'#f7f8f7'} >
     <form onSubmit={handleSubmit}>
-      {/* <Text>Signup</Text> */}
+    
+      <Flex gap={'1rem'}>
+        <label><b>Name</b></label>
+        <input type="text" placeholder='enter name' name="name" onChange={handleInfo}  />
+      </Flex>
 
-      <label>Email address</label>
-      <input type='email' name="email" onChange={handleInfo} />
-      <input type='password' name="password" onChange={handleInfo} />
+      <Flex gap={'1rem'}>
+      <label><b>Email address</b></label>
+      <input type='email' name="email" onChange={handleInfo} placeholder='enter email' />
+      </Flex>
+      
+      <Flex gap={'1rem'}>
+      
+      <label><b>Password</b></label>
+      <input type='password' name="password" onChange={handleInfo} placeholder='enter password'  />
+      </Flex>
       <input type="submit" />
+    
     </form>
-     </Box>
+    </Box>
  
   <Box>
      <form onSubmit={handleLogin}>

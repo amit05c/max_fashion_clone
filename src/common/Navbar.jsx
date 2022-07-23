@@ -9,6 +9,8 @@ import { BiStore } from "react-icons/bi";
 import { FaCartPlus } from "react-icons/fa";
 import Hover from "../components/navbarComp/Hover";
 import { CartContext } from "../context/CartContext";
+import { AuthContext } from "../context/AuthContext";
+
 
 // function Example() {
 //     return <Icon as={TbTruckDelivery} />
@@ -16,6 +18,8 @@ import { CartContext } from "../context/CartContext";
 
 const Navbar = () => {
   const {state} = useContext(CartContext)
+  const {state1} = useContext(AuthContext)
+  console.log(state1.status)
   return (
     <Box>
       <Box
@@ -110,7 +114,7 @@ const Navbar = () => {
           
           <Stack direction={"row"} spacing="20px" mt={'10px'} >
           <Link>More</Link>
-          <NavLink to={'/login'}>Signup/Signin</NavLink>
+       {state1.status?  (<h1>{state1.name}</h1> ): <NavLink to={'/login'}>Signup/Signin</NavLink> }   
           {/* <Hover/> */}
          <NavLink to={'/cart'}><Box><FaCartPlus/>{state.length>1 ? state.length-1 : ""}</Box></NavLink> 
           </Stack>

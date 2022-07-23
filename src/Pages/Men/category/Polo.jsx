@@ -5,12 +5,12 @@ import { Box, Flex, Image, Link,Text,Grid,Button,Select } from "@chakra-ui/react
 
 
 const Polo = () => {
-  const {jeansWear}= useContext(DataContext)
+  const {polo}= useContext(DataContext)
   // console.log(jeansWear)
   const {state,dispatch}= useContext(CartContext)
   const [update,setUpdate] = useState(false)
   
-  const [data,setData]=useState(jeansWear)
+  const [data,setData]=useState(polo)
   const [size,setSize]= useState()
 
   const handleLow=()=>{

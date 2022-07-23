@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import Private from "../HOC/Private";
 import Cart from "./Cart";
 import Login from "./Login";
 import Polo from "./Men/category/Polo";
@@ -16,9 +17,9 @@ const AllRoutes = () => {
       <Route path="/jeanswear" element={<JeansWear />} />
 
       <Route path="/men" element={<Men />} />
-      <Route path="/polo" element={<Polo />} />
+      <Route path="/polo" element={<Private> <Polo /></Private> } />
 
-      <Route path="/cart" element={<Cart />} />
+      <Route path="/cart" element={<Private><Cart /></Private> } />
       <Route path="/login" element={<Login/>} />
     </Routes>
   );
