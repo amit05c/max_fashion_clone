@@ -53,12 +53,12 @@ const handleInfo= (e)=>{
   const handleChange= (e)=>{
     const {name,value} = e.target
     setLogin({
-     ...info,
+     ...login,
      [name]:value
     })
   }
 
-
+console.log(login)
   const handleLogin = (e)=>{
     e.preventDefault()
     let userInfo= JSON.parse(localStorage.getItem('userData')) || []
