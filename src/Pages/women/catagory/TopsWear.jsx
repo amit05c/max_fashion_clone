@@ -105,7 +105,7 @@ useEffect(()=>{
 },[update])
 
   return (
-    <Box mt={'2rem'} >
+    <Box mt={'2rem'} m="auto">
       <Box mb={'2rem'} >
         <Button  mr={'1rem'} onClick={handleLow} className={styles.help} >Low to high</Button>
         <Button onClick={handleHigh} className={styles.help}>High to low</Button>

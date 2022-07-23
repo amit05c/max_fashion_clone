@@ -15,7 +15,7 @@ import styles from "./women.module.css"
 ]
 const Women = () => {
   return (
-    <Box>
+    <Box m={"auto"}>
       <Box bg="blue" w="100%" p={4} color="white">
       <NavLink to="/topswear"><Text className={styles.help}>Sale Final Call! + Buy 2 get 2 Free</Text> </NavLink> 
       </Box>
