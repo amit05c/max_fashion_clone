@@ -4,6 +4,11 @@ import Catagory from '../../components/Men/Catagory'
 import SpotLight from '../../components/Men/SpotLight'
 import WomenCarousel from '../women/WomenCarousel '
 
+const imgUrl= ['https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/MAX-Banner1-desktop-Men-19JULY2022.png',
+'https://lmsin.net/cdn-cgi/image/w=1232,q=85,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/MAX-Banner7-desktop-CommonB2G2-17JUNE2022.gif',
+
+'https://lmsin.net/cdn-cgi/image/w=1232,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/MAX-Banner5-desktop-Men-18JULY2022.png'
+]
 const Men = () => {
   return (
     <Box>
@@ -11,10 +16,10 @@ const Men = () => {
         This is the Box
       </Box>
       
-      {/* <WomenCarousel/> */}
+      <WomenCarousel imgUrl={imgUrl}/>
 
       <Box mt={'30px'}>
-      <Link><Image src="https://lmsin.net/cdn-cgi/image/w=1232,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/MAX-Banner5-desktop-Men-18JULY2022.png" w={'100%'} m='auto'/></Link>  
+      {/* <Link><Image src="https://lmsin.net/cdn-cgi/image/w=1232,q=60,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedAD8AF927.lmsin.net/MAX-Friday/MAX2.O/MAX-Banner5-desktop-Men-18JULY2022.png" w={'100%'} m='auto'/></Link>   */}
       </Box>
         <SpotLight />
 

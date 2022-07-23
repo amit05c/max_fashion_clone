@@ -8,28 +8,31 @@
   
   .dropdown {
     position: relative;
+    
     display: inline-block;
   }
   
   .dropdownContent {
     display: none;
     position: absolute;
+    /* left: 0px; */
     background-color: #f1f1f1;
-    min-width: 50rem;
+    /* background-color: red; */
+    min-width: 60rem;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     /* margin-left: -100px; */
   }
   
-  .dropdownContent a {
+  /* .dropdownContent a {
     color: black;
     padding: 12px 16px 0 12px;
     text-decoration: none;
     display: block;
-    /* margin-left: -100px; */
-  }
+    
+  } */
   
-  .dropdownContent a:hover {background-color: #ddd;}
+  /* .dropdownContent a:hover {background-color: #ddd;} */
   
   .dropdown:hover .dropdownContent {display: block;}
   

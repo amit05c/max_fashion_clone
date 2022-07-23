@@ -32,9 +32,21 @@ const handleInfo= (e)=>{
 
   const handleSubmit=(e)=>{
     e.preventDefault()
-    setData([...data,info])
+    
+
+    if(info.name=="" || info.password==""||info.email==""){
+      
+      
+      alert('Fill all details')
+    }else{
+      
+      setData([...data,info])
+      localStorage.setItem("userData", JSON.stringify(data))
+    }
+
     console.log(data)
-    localStorage.setItem("userData", JSON.stringify(data))
+    
+    
   }
 
 
@@ -66,37 +78,47 @@ const handleInfo= (e)=>{
   }
 
   return (
-    <Flex justify={'space-around'} width={'100%'} h={'20rem'} mt={'4rem'}>
-      <Box bg={'#f7f8f7'} >
+    <Flex justify={'space-around'} width={'100%'} h={'20rem'} mt={'4rem'} >
+      <Box bg={'#f7f8f7'} border="1px solid black" p={'1rem'}>
+        <Text color="blue" fontFamily={"fantasy"}>Signup</Text>
     <form onSubmit={handleSubmit}>
     
-      <Flex gap={'1rem'}>
+      <Flex gap={'1rem'} mb="1rem">
         <label><b>Name</b></label>
-        <input type="text" placeholder='enter name' name="name" onChange={handleInfo}  />
+        <input type="text" placeholder='enter name' name="name" onChange={handleInfo} style={{backgroundColor:'#f7f8f7'}} />
       </Flex>
-
-      <Flex gap={'1rem'}>
+      <Stack></Stack>
+      <Flex gap={'1rem'} mb="1rem">
       <label><b>Email address</b></label>
-      <input type='email' name="email" onChange={handleInfo} placeholder='enter email' />
+      <input type='email' name="email" onChange={handleInfo} placeholder='enter email' style={{backgroundColor:'#f7f8f7'}} />
       </Flex>
-      
-      <Flex gap={'1rem'}>
+      <Stack/>
+      <Flex gap={'1rem'} mb="1rem">
       
       <label><b>Password</b></label>
-      <input type='password' name="password" onChange={handleInfo} placeholder='enter password'  />
+      <input type='password' name="password" onChange={handleInfo} placeholder='enter password' style={{backgroundColor:'#f7f8f7'}} />
       </Flex>
-      <input type="submit" />
+      {/* <Stack/> */}
+      <br />
+      <input type="submit" style={{backgroundColor:'blue',color:'white', marginTop:"1rem", borderRadius:"20%"}} />
     
     </form>
     </Box>
  
-  <Box>
+  <Box border={"1px solid black"} p={'1rem'}>
      <form onSubmit={handleLogin}>
-       <Text>Login</Text>
-       <label>Email address</label>
+       <Text fontFamily={"fantasy"} color="blue">Login</Text>
+
+       <Flex gap={'1rem'} mb="1rem">
+       <label><b>Email</b></label>
        <input type='email' name="email" onChange={handleChange} />
+       </Flex>
+       <Flex gap={'1rem'} mb="1rem">
+        <label><b>Password</b></label>
        <input type='password' name="password" onChange={handleChange} />
-       <input type='submit' />
+       </Flex>
+       
+       <input type='submit' style={{backgroundColor:'blue',color:'white', marginTop:"1rem", borderRadius:"20%"}} />
        {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
      </form>
     

@@ -6,7 +6,7 @@ import {NavLink} from "react-router-dom"
 // import { AiFillAndroid } from "react-icons/ai";
 import { TbTruckDelivery } from "react-icons/tb";
 import { BiStore } from "react-icons/bi";
-import { FaCartPlus } from "react-icons/fa";
+import { FaCartPlus,FaUserCircle } from "react-icons/fa";
 import Hover from "../components/navbarComp/Hover";
 import { CartContext } from "../context/CartContext";
 import { AuthContext } from "../context/AuthContext";
@@ -51,8 +51,8 @@ const Navbar = () => {
             alignItems={"center"}
             
           > 
-          <Flex>
-          <BiStore  />
+          <Flex gap={'0.3rem'} mt={'0.8rem'}>
+          <BiStore style={{marginTop:"0.3rem"}} />
             <Link>Return to Store</Link>
           </Flex>
             
@@ -62,10 +62,10 @@ const Navbar = () => {
             justify={"center"}
             gap="5px"
             alignItems={"center"}
-            marginTop="10px"
+            marginTop="20px"
           >
-            <BiStore />
-            <Link>Click and collect</Link>
+            <BiStore style={{marginTop:"0.8rem"}} />
+            <Link mt={'0.7rem'}>Click and collect</Link>
           </Flex>
 
           <Spacer />
@@ -74,15 +74,16 @@ const Navbar = () => {
             direction={{ base: "column", md: "row", lg: "row" }}
             spacing="30px"
             marginRight={"50px"}
+            mt='2rem'
           >
             <Box>
               <Link>Download our apps</Link>
             </Box>
 
-            <Box>
-              <Link>Store locator</Link>
+            <Box >
+              <Link >Store locator</Link>
             </Box>
-
+    
             <Box>
               <Link>Help</Link>
             </Box>
@@ -92,34 +93,34 @@ const Navbar = () => {
       {/* lower part of navbar */}
       <Box bg="#f7f8f7" w="100%" color="black" h={"60px"}>
         <Flex>
-          <Box boxSize="sm" w={"8%"} mt="-18px">
-            <Link>
+          <Box boxSize="sm" w={"8%"} mt="-5px">
+            <NavLink to={'/'}>
               <Image
                 src="/Navbar/New Max Logo- Eng With Outline_1_1.png"
                 alt="logo"
                 width={"100%"}
               />
-            </Link>
+            </NavLink>
           </Box>
 
-          <Flex gap="30px">
+          <Flex gap={'30px'}>
             <NavLink to="/"><Hover title={"Women"}/></NavLink>
             <NavLink to={'/men'}><Hover title={"Men"}/></NavLink>
-            <Link><Hover title={"Girl"}/></Link>
-            <Link><Hover title={"Boy"}/></Link>
+            <NavLink to={'/men'}><Hover title={"Girl"}/></NavLink>
+            <NavLink to={'/men'}><Hover title={"Boy"}/></NavLink>
           </Flex>
 
         <Flex justify={"space-end"} height={"50px"} gap="50px" width={'50%'} ml={'14%'}  >
           <Box w={'50%'}>
             <Input placeholder="What are you looking for?" size="md" />
           </Box>
-          <Spacer/>
+          {/* <Spacer/> */}
           
           <Stack direction={"row"} spacing="20px" mt={'10px'} >
           <Link>More</Link>
-       {state1.status?  (<h1>{state1.name}</h1> ): <NavLink to={'/login'}>Signup/Signin</NavLink> }   
+       {state1.status?  (<Box >{<FaUserCircle style={{fontSize:"20px",marginLeft:"1rem"}}/>}{state1.name}</Box> ): <NavLink  to={'/login'}><Link>Signup/Signin</Link></NavLink> }   
           {/* <Hover/> */}
-         <NavLink to={'/cart'}><Box><FaCartPlus/>{state.length>1 ? state.length-1 : ""}</Box></NavLink> 
+         <NavLink to={'/cart'}><Box><FaCartPlus />{state.length>1 ? state.length-1 : ""}</Box></NavLink> 
           </Stack>
           
           </Flex>

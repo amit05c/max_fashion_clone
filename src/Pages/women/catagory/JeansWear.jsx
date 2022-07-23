@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../../context/CartContext'
 import { DataContext } from '../../../context/DataContext'
 import { Box, Flex, Image, Link,Text,Grid,Button,Select } from "@chakra-ui/react";
+import styles from "../women.module.css"
 
 
 const JeansWear = () => {
@@ -57,7 +58,7 @@ useEffect(()=>{
       </Box>
     <Grid templateColumns={`repeat(4,1fr)`}gap="2px">
     {data.map(el=>(
-      <Box key={el.id}>
+      <Box key={el.id} className={styles.help}>
      <Link>
      <Box>
         <Image src={el.image}/>
