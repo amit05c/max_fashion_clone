@@ -110,7 +110,7 @@ useEffect(()=>{
         <Button  mr={'1rem'} onClick={handleLow} className={styles.help} >Low to high</Button>
         <Button onClick={handleHigh} className={styles.help}>High to low</Button>
       </Box>
-    <Grid templateColumns={`repeat(4,1fr)`}gap="2rem">
+    <Grid templateColumns={{base:`repeat(1,1fr)`,sm:`repeat(2,1fr)`, md: `repeat(3,1fr)`, lg: `repeat(4,1fr)`}}gap="2rem">
     {data.map(el=>(
       <Box key={el.id} className={styles.help} >
      <Link>

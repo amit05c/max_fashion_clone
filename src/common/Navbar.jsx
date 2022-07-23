@@ -92,7 +92,7 @@ const Navbar = () => {
       </Box>
       {/* lower part of navbar */}
       <Box bg="#f7f8f7" w="100%" color="black" h={"60px"}>
-        <Flex>
+        <Flex wrap={{base:"wrap", md:"wrap" }}>
           <Box boxSize="sm" w={"8%"} mt="-5px">
             <NavLink to={'/'}>
               <Image

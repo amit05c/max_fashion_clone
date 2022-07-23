@@ -22,7 +22,7 @@ const WomenCarousel  = ({imgUrl}) => {
          return ()=>  clearInterval(id)
     },[i])
   return (
-    <Box bg='' w='100%' p={4} color='white'  padding='0'>
+    <Box bg='' w='90%' p={4} color='white'  padding='0' m={"auto"} mt={'2rem'}>
     <Image src={url} w={'100%'} />
     </Box>
   )
