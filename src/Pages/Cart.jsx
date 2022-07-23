@@ -17,14 +17,15 @@ const Cart = () => {
     }
 
 const handleRemove = (id)=>{
+  console.log(id)
      state.filter((el)=>{
-      if(!el.id==id){
-        dispatch({type:"delete", id:el.id, imgUrl:el.imgUrl, price:el.price,size:el.size })
+      if(el.id==id){
+        dispatch({type:"delete", id:id })
       }
      })
-     console.log(state)
-}
-
+    }
+    console.log(state)
+    // , imgUrl:el.imgUrl, price:el.price,size:el.size
   return (
     <Flex direction={'column'} gap="1rem">
    {state.map((el,i)=>{

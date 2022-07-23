@@ -17,15 +17,30 @@ const cartReducer= (state,action)=>{
     }
     
     case "delete":{
-        return [
-            ...state,
-            {
-            id:action.id,
-            imgUrl:action.imgUrl,
-            size: action.size,
-            price: action.price,
-            color: action.color
-        }]
+
+
+
+        state.splice((action.id-1),1)
+        console.log(state)
+        return state
+
+        // state.filter(el=>{
+        //     console.log(el)
+        //     if(el.id!=action.id){
+        //      return [...state]
+        //     }
+        // })
+        // return [
+            
+            // {
+            // id:action.id,
+            // imgUrl:action.imgUrl,
+            // size: action.size,
+            // price: action.price,
+            // color: action.color
+        // }
+    // ]
+
     }
 
     default:{
