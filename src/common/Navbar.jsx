@@ -48,11 +48,14 @@ const Navbar = () => {
           <Flex
             justify={"center"}
             gap="5px"
-            // align={"center"}
-            marginTop="10px"
-          >
-            <BiStore />
+            alignItems={"center"}
+            
+          > 
+          <Flex>
+          <BiStore  />
             <Link>Return to Store</Link>
+          </Flex>
+            
           </Flex>
 
           <Flex
