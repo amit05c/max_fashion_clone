@@ -11,11 +11,13 @@ import {
   Stack,
 } from '@chakra-ui/react'
 import { AuthContext } from '../context/AuthContext'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 const [info,setInfo] = useState({})
 const [data,setData] = useState([])
 const [ login,setLogin] = useState({})
+const navigate= useNavigate()
 
 const {state1,dispatch1} = useContext(AuthContext)
    console.log(state1)
@@ -56,6 +58,7 @@ const handleInfo= (e)=>{
         dispatch1({type:"login", status:true, name: userInfo[i].name })
         // state1.status ? return {<Navigate to="/mens"/>} : {<Navigate to={'/login'}/>    }
         console.log(state1.status)
+        navigate('/')
       }else{
         console.log("Login failed")
       }
