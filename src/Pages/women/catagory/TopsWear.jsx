@@ -7,6 +7,7 @@ import { AuthContext } from '../../../context/AuthContext';
 // import Hover from '../../../components/navbarComp/Hover';
 // import { useToast, Wrap, WrapItem } from '@chakra-ui/react'
 import {useNavigate} from "react-router-dom"
+import styles from "../women.module.css"
 
 
 const topsWear=[
@@ -106,12 +107,12 @@ useEffect(()=>{
   return (
     <Box mt={'2rem'} >
       <Box mb={'2rem'} >
-        <Button  mr={'1rem'} onClick={handleLow}>Low to high</Button>
-        <Button onClick={handleHigh}>High to low</Button>
+        <Button  mr={'1rem'} onClick={handleLow} className={styles.help} >Low to high</Button>
+        <Button onClick={handleHigh} className={styles.help}>High to low</Button>
       </Box>
-    <Grid templateColumns={`repeat(4,1fr)`}gap="2px">
+    <Grid templateColumns={`repeat(4,1fr)`}gap="2rem">
     {data.map(el=>(
-      <Box key={el.id}>
+      <Box key={el.id} className={styles.help} >
      <Link>
      <Box>
         <Image src={el.image}/>
@@ -127,7 +128,7 @@ useEffect(()=>{
           <option key={i} value={size}>{size}</option>
           ))}
          </Select>
-         <Button bg='tomato'  onClick={()=>handleSubmit(el.id)}>Add to cart</Button>
+         <Button bg='tomato'  onClick={()=>handleSubmit(el.id)} className={styles.help}>Add to cart</Button>
          
 
 
