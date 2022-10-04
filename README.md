@@ -30,21 +30,17 @@ It is very hard to clone all the pages in five days. Although I cloned home page
 <table  align=center>
   <tr>
     <td align=center> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" height=100></td>
-    <td align=center> <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png"  height=100   width=150 ></td>
-    <td align=center> <img src="https://cdn.iconscout.com/icon/free/png-512/mongodb-4-1175139.png"  height=100  width=150 ></td>
-    <td  align=center> <img src="https://cdn.buttercms.com/4XpulFfySpWyYTXuaVL2"  height=100  width=150 ></td>
+    <td align=center> <img src="https://user-images.githubusercontent.com/101566257/193799198-e5888621-5113-4fa1-8947-c2034a5d6710.png"  height=100   width=150 ></td>
     <td align=center> <img src="https://erons-blog.netlify.app/media/building-react-components-with-chakra-ui.png"  width=120  ></td>
   </tr>
 </table>
 
 ### `Functionalities`
 
-- User can add and Remove Task
-- User can create Project
-- Website is under Authentication && Authorization
-- OAuth login through google,
-- Email Login
-- Similar properties suggestion feature
+- Signup
+- Login
+- Sort
+- Add to cart
 
 
 
