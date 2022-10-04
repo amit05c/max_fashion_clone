@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# MaxFashion MERN-Stack-Clone
+Maxfashion is an online e-commerce website for clothes. 
+## Getting Started
+1. Live Link :- https://chief-shape-6531.vercel.app/
+2. Fork this repository https://github.com/amit05c/chief-shape-6531
+3. Clone the Forked repository.
+   - **_Note_**: This Clone repository should be on your github account.
+4. navigate to the folder `fixed-thread-889`
+5. npm install
+6. npm start
+7. To Visit App:
+**http://localhost:3000/**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello everyone, this is a Readme for my construct week project that has been completed successfully with in 5 days. It is a solo project.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Details:
 
-### `npm test`
+It is very hard to clone all the pages in five days. Although I cloned home page, men, women page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Logo_of_Max_Fashion_and_Accessories%2C_March_2018.png">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Built With
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<table  align=center>
+  <tr>
+    <td align=center> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" height=100></td>
+    <td align=center> <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png"  height=100   width=150 ></td>
+    <td align=center> <img src="https://cdn.iconscout.com/icon/free/png-512/mongodb-4-1175139.png"  height=100  width=150 ></td>
+    <td  align=center> <img src="https://cdn.buttercms.com/4XpulFfySpWyYTXuaVL2"  height=100  width=150 ></td>
+    <td align=center> <img src="https://erons-blog.netlify.app/media/building-react-components-with-chakra-ui.png"  width=120  ></td>
+  </tr>
+</table>
 
-### `npm run eject`
+### `Functionalities`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- User can add and Remove Task
+- User can create Project
+- Website is under Authentication && Authorization
+- OAuth login through google,
+- Email Login
+- Similar properties suggestion feature
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Show your support
 
-## Learn More
+Give a ⭐️ if you like this project!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgments
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- We take all the responsiblity for every single line of code. The desgin inspire from Clockify.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
