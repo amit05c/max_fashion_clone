@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { useToast } from '@chakra-ui/react'
 import {
   FormControl,
   FormLabel,
@@ -14,10 +15,17 @@ import { AuthContext } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
-const [info,setInfo] = useState({})
-const [data,setData] = useState([])
+const [info,setInfo] = useState({
+  name:"",
+  email:"",
+  password: ""
+})
+// const [data,setData] = useState([])
+
 const [ login,setLogin] = useState({})
+const toast= useToast()
 const navigate= useNavigate()
+let localData= JSON.parse(localStorage.getItem("userData")) || []
 
 const {state1,dispatch1} = useContext(AuthContext)
    console.log(state1)
@@ -29,6 +37,7 @@ const handleInfo= (e)=>{
      })
 }
 
+console.log(info)
 
   const handleSubmit=(e)=>{
     e.preventDefault()
@@ -37,14 +46,43 @@ const handleInfo= (e)=>{
     if(info.name=="" || info.password==""||info.email==""){
       
       
-      alert('Fill all details')
+      toast({
+        title: `Please fill all the credentials`,
+        status: "error",
+        position:"top",
+        isClosable: true,
+      })
     }else{
+         let check= localData.filter(el=>el.email==info.email)
+      if(check.length==0){
+        localData=[...localData,info]
+        localStorage.setItem("userData", JSON.stringify(localData))
+        toast({
+          title: `Signup Successful`,
+          status: "success",
+          position:"top",
+          isClosable: true,
+        })
+
+        setInfo({
+          name:"",
+          email:"",
+          password:""
+        })
+      }else{
+        toast({
+          title: `User already registered`,
+          status: "error",
+          position:"top",
+          isClosable: true,
+        })
+      }
       
-      setData([...data,info])
-      localStorage.setItem("userData", JSON.stringify(data))
+      
+      
     }
 
-    console.log(data)
+    // console.log(data)
     
     
   }
@@ -65,11 +103,19 @@ console.log(login)
 
     for(let i=0; i<userInfo.length; i++){
       if(userInfo[i].email== login.email && userInfo[i].password==login.password){
-        console.log("Login success")
-        console.log(userInfo[i].name)
+
+        // console.log("Login success")
+        // console.log(userInfo[i].name)
+
+        toast({
+          title: `Login Success`,
+          status: "success",
+          position:"top",
+          isClosable: true,
+        })
         dispatch1({type:"login", status:true, name: userInfo[i].name })
         // state1.status ? return {<Navigate to="/mens"/>} : {<Navigate to={'/login'}/>    }
-        console.log(state1.status)
+        // console.log(state1.status)
         navigate('/')
       }else{
         console.log("Login failed")
@@ -83,24 +129,24 @@ console.log(login)
         <Text color="blue" fontFamily={"fantasy"}>Signup</Text>
     <form onSubmit={handleSubmit}>
     
-      <Flex gap={'1rem'} mb="1rem">
+      <Flex gap={'1rem'} mb="1rem" justifyContent={"center"} alignItems="center" p={"1rem"}>
         <label><b>Name</b></label>
-        <input type="text" placeholder='enter name' name="name" onChange={handleInfo} style={{backgroundColor:'#f7f8f7'}} />
+        <Input type="text" placeholder='enter name' name="name" value={info.name} onChange={handleInfo} p={['0.5rem','0.8rem','1rem']} />
       </Flex>
-      <Stack></Stack>
+      
       <Flex gap={'1rem'} mb="1rem">
       <label><b>Email address</b></label>
-      <input type='email' name="email" onChange={handleInfo} placeholder='enter email' style={{backgroundColor:'#f7f8f7'}} />
+      <Input type='email' name="email" onChange={handleInfo} value={info.email} placeholder='enter email' p={['0.5rem','0.8rem','1rem']}  />
       </Flex>
-      <Stack/>
+    
       <Flex gap={'1rem'} mb="1rem">
       
       <label><b>Password</b></label>
-      <input type='password' name="password" onChange={handleInfo} placeholder='enter password' style={{backgroundColor:'#f7f8f7'}} />
+      <Input type='password' name="password" value={info.password} onChange={handleInfo} placeholder='enter password'p={['0.5rem','0.8rem','1rem']} />
       </Flex>
       {/* <Stack/> */}
       <br />
-      <input type="submit" style={{backgroundColor:'blue',color:'white', marginTop:"1rem", borderRadius:"20%"}} />
+      <Input type="submit" p="0.5rem" bg="green.400" />
     
     </form>
     </Box>
@@ -111,14 +157,14 @@ console.log(login)
 
        <Flex gap={'1rem'} mb="1rem">
        <label><b>Email</b></label>
-       <input type='email' name="email" onChange={handleChange} />
+       <Input type='email' name="email" onChange={handleChange} p={['0.5rem','0.8rem','1rem']} />
        </Flex>
        <Flex gap={'1rem'} mb="1rem">
         <label><b>Password</b></label>
-       <input type='password' name="password" onChange={handleChange} />
+       <Input type='password' name="password" onChange={handleChange} p={['0.5rem','0.8rem','1rem']} />
        </Flex>
        
-       <input type='submit' style={{backgroundColor:'blue',color:'white', marginTop:"1rem", borderRadius:"20%"}} />
+       <Input type='submit' p="0.5rem" value="Login" bg="green.400" />
        {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
      </form>
     
