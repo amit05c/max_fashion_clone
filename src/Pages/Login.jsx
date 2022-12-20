@@ -28,7 +28,7 @@ const navigate= useNavigate()
 let localData= JSON.parse(localStorage.getItem("userData")) || []
 
 const {state1,dispatch1} = useContext(AuthContext)
-   console.log(state1)
+  //  console.log(state1)
 const handleInfo= (e)=>{
      const {name,value} = e.target
      setInfo({
@@ -37,7 +37,7 @@ const handleInfo= (e)=>{
      })
 }
 
-console.log(info)
+// console.log(info)
 
   const handleSubmit=(e)=>{
     e.preventDefault()
@@ -99,28 +99,58 @@ console.log(info)
 console.log(login)
   const handleLogin = (e)=>{
     e.preventDefault()
+    let count=0
+    let user=""
     let userInfo= JSON.parse(localStorage.getItem('userData')) || []
 
     for(let i=0; i<userInfo.length; i++){
       if(userInfo[i].email== login.email && userInfo[i].password==login.password){
 
+        count++
+        user= userInfo[i].name
+
         // console.log("Login success")
         // console.log(userInfo[i].name)
 
-        toast({
-          title: `Login Success`,
-          status: "success",
-          position:"top",
-          isClosable: true,
-        })
-        dispatch1({type:"login", status:true, name: userInfo[i].name })
-        // state1.status ? return {<Navigate to="/mens"/>} : {<Navigate to={'/login'}/>    }
-        // console.log(state1.status)
-        navigate('/')
+        // toast({
+        //   title: `Login Success`,
+        //   status: "success",
+        //   position:"top",
+        //   isClosable: true,
+        // })
+        // dispatch1({type:"login", status:true, name: userInfo[i].name })
+        // // state1.status ? return {<Navigate to="/mens"/>} : {<Navigate to={'/login'}/>    }
+        // // console.log(state1.status)
+        // navigate('/')
+        break;
       }else{
-        console.log("Login failed")
+        // toast({
+        //   title: `Login Failed`,
+        //   status: "error",
+        //   position:"top",
+        //   isClosable: true,
+        // })
       }
     }
+console.log(count)
+    if(count>0){
+      toast({
+        title: `Login Success`,
+        status: "success",
+        position:"top",
+        isClosable: true,
+      })
+      dispatch1({type:"login", status:true, name: user })
+      // state1.status ? return {<Navigate to="/mens"/>} : {<Navigate to={'/login'}/>    }
+      // console.log(state1.status)
+      navigate('/')
+    }
+    toast({
+      title: `Login Failed`,
+      status: "error",
+      position:"top",
+      isClosable: true,
+    })
   }
 // check
   return (
@@ -128,6 +158,7 @@ console.log(login)
       <Box bg={'#f7f8f7'} border="1px solid black" p={'1rem'}>
         <Text color="blue" fontFamily={"fantasy"}>Signup</Text>
     <form onSubmit={handleSubmit}>
+      <Flex direction={"column"} alignItems="center" justify={"center"}>
     
       <Flex gap={'1rem'} mb="1rem" justifyContent={"center"} alignItems="center" p={"1rem"}>
         <label><b>Name</b></label>
@@ -135,7 +166,7 @@ console.log(login)
       </Flex>
       
       <Flex gap={'1rem'} mb="1rem">
-      <label><b>Email address</b></label>
+      <label><b>Email</b></label>
       <Input type='email' name="email" onChange={handleInfo} value={info.email} placeholder='enter email' p={['0.5rem','0.8rem','1rem']}  />
       </Flex>
     
@@ -146,14 +177,16 @@ console.log(login)
       </Flex>
       {/* <Stack/> */}
       <br />
-      <Input type="submit" p="0.5rem" bg="green.400" />
-    
+      <Input type="submit" p="0.5rem" bg="green.400" cursor={"pointer"} />
+      </Flex>
     </form>
     </Box>
  
   <Box border={"1px solid black"} p={'1rem'}>
      <form onSubmit={handleLogin}>
        <Text fontFamily={"fantasy"} color="blue">Login</Text>
+
+<Flex direction={"column"} align="center">
 
        <Flex gap={'1rem'} mb="1rem">
        <label><b>Email</b></label>
@@ -164,8 +197,9 @@ console.log(login)
        <Input type='password' name="password" onChange={handleChange} p={['0.5rem','0.8rem','1rem']} />
        </Flex>
        
-       <Input type='submit' p="0.5rem" value="Login" bg="green.400" />
+       <Input type='submit' p="0.5rem" value="Login" bg="green.400" cursor={"pointer"} />
        {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
+       </Flex>
      </form>
     
      </Box>

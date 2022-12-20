@@ -10,7 +10,7 @@
   }
 
   .help:hover {
-    transform: scale(1.2);
+    transform: scale(1.08);
     transition: all 0.9s ease;
     text-decoration: underline;
   }

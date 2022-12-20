@@ -1,6 +1,6 @@
 import React from 'react'
 import style from "./hover.module.css"
-import { Link } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 const Hover = ({title}) => {
   return (
@@ -12,30 +12,29 @@ const Hover = ({title}) => {
     <div style={{display:"flex", justifyContent:"space-evenly", alignItems:"center"}}>
 
     <div>
-     <Link><p>Jeans</p></Link> 
-      <Link><p>Top</p></Link>
-      <Link><p>Innerwear</p></Link>
-      <Link><p>Bottom wear</p></Link>
-      <Link><p>Saree</p></Link>
-      <Link><p>Kurta</p></Link>
+     <Link to="/jeanswear">Jeans</Link> 
+      <Link to="/jeanswear"><p>Top</p></Link>
+      <Link to="/jeanswear"><p>Innerwear</p></Link>
+      <Link to="/jeanswear"><p>Bottom wear</p></Link>
+      <Link to="/jeanswear"><p>Saree</p></Link>
+      <Link to="/jeanswear"><p>Kurta</p></Link>
     </div>
 
     <div>
-     <Link><p>Jeans</p></Link> 
-      <Link><p>Top</p></Link>
-      <Link><p>Innerwear</p></Link>
-      <Link><p>Bottom wear</p></Link>
-      <Link><p>Saree</p></Link>
-      <Link><p>Kurta</p></Link>
-    </div>
+    <Link to="/jeanswear">Jeans</Link> 
+      <Link to="/jeanswear"><p>Top</p></Link>
+      <Link to="/jeanswear"><p>Innerwear</p></Link>
+      <Link to="/jeanswear"><p>Bottom wear</p></Link>
+      <Link to="/jeanswear"><p>Saree</p></Link>
+      <Link to="/jeanswear"><p>Kurta</p></Link>    </div>
 
     <div>
-     <Link><p>Jeans</p></Link> 
-      <Link><p>Top</p></Link>
-      <Link><p>Innerwear</p></Link>
-      <Link><p>Bottom wear</p></Link>
-      <Link><p>Saree</p></Link>
-      <Link><p>Kurta</p></Link>
+    <Link to="/jeanswear">Jeans</Link> 
+      <Link to="/jeanswear"><p>Top</p></Link>
+      <Link to="/jeanswear"><p>Innerwear</p></Link>
+      <Link to="/jeanswear"><p>Bottom wear</p></Link>
+      <Link to="/jeanswear"><p>Saree</p></Link>
+      <Link to="/jeanswear"><p>Kurta</p></Link>
     </div>
 
     

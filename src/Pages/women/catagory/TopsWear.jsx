@@ -106,7 +106,7 @@ useEffect(()=>{
 
   return (
     <Box mt={'2rem'} m="auto">
-      <Box mb={'2rem'} >
+      <Box mb={'3rem'} mt="2rem">
         <Button  mr={'1rem'} onClick={handleLow} className={styles.help} >Low to high</Button>
         <Button onClick={handleHigh} className={styles.help}>High to low</Button>
       </Box>
@@ -128,13 +128,8 @@ useEffect(()=>{
           <option key={i} value={size}>{size}</option>
           ))}
          </Select>
-         <Button bg='tomato'  onClick={()=>handleSubmit(el.id)} className={styles.help}>Add to cart</Button>
-         
-
-
+         <Button bg='tomato' mt={"1rem"} onClick={()=>handleSubmit(el.id)} >Add to cart</Button>
         
-
-
          
     </Box>
         
