@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../../context/CartContext'
 import { DataContext } from '../../../context/DataContext'
-import { Box, Flex, Image, Link,Text,Grid,Button,Select } from "@chakra-ui/react";
-
+import { Box, Flex, Image, Link,Text,Grid,Button,Select, styled } from "@chakra-ui/react";
+import styles from "../men.module.css"
 
 const Polo = () => {
   const {polo}= useContext(DataContext)
@@ -52,12 +52,12 @@ useEffect(()=>{
   return (
     <Box mt={'2rem'} >
       <Box mb={'2rem'} >
-        <Button  mr={'1rem'} onClick={handleLow}>Low to high</Button>
-        <Button onClick={handleHigh}>High to low</Button>
+        <Button  mr={'1rem'} onClick={handleLow} className={styles.help}>Low to high</Button>
+        <Button onClick={handleHigh} className={styles.help}>High to low</Button>
       </Box>
     <Grid templateColumns={{base:`repeat(1,1fr)`,sm:`repeat(2,1fr)`, md: `repeat(3,1fr)`, lg: `repeat(4,1fr)`}}gap="2px">
     {data.map(el=>(
-      <Box key={el.id}>
+      <Box key={el.id} className={styles.help}>
      <Link>
      <Box>
         <Image src={el.image}/>
@@ -73,7 +73,7 @@ useEffect(()=>{
           <option key={i} value={size}>{size}</option>
           ))}
          </Select>
-         <Button bg='tomato'  onClick={()=>handleSubmit(el.id)}>Add to cart</Button>
+         <Button bg='tomato' mt="1rem" mb="1rem"  onClick={()=>handleSubmit(el.id)}>Add to cart</Button>
     </Box>
         
     ))}

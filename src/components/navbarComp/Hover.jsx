@@ -12,7 +12,7 @@ const Hover = ({title}) => {
     <div style={{display:"flex", justifyContent:"space-evenly", alignItems:"center"}}>
 
     <div>
-     <Link to="/jeanswear">Jeans</Link> 
+     <Link to="/polo">Jeans</Link> 
       <Link to="/jeanswear"><p>Top</p></Link>
       <Link to="/jeanswear"><p>Innerwear</p></Link>
       <Link to="/jeanswear"><p>Bottom wear</p></Link>
@@ -21,7 +21,7 @@ const Hover = ({title}) => {
     </div>
 
     <div>
-    <Link to="/jeanswear">Jeans</Link> 
+    <Link to="/polo">Jeans</Link> 
       <Link to="/jeanswear"><p>Top</p></Link>
       <Link to="/jeanswear"><p>Innerwear</p></Link>
       <Link to="/jeanswear"><p>Bottom wear</p></Link>
